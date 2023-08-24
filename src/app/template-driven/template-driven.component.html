@@ -1,0 +1,29 @@
+<p>template-driven works!</p>
+
+<div>
+  <form #studForm="ngForm" (ngSubmit)="studSubmit(studForm)">
+    Name:<input type="text" name="name" [(ngModel)]="name" required />
+    <br />Subject:<input
+      type="text"
+      name="subject"
+      [(ngModel)]="subject"
+      required
+    /><br />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let values of studData">
+      <td>{{ values.name | upper }}</td>
+      <td>{{ values.subject }}</td>
+    </tr>
+  </tbody>
+</table>
